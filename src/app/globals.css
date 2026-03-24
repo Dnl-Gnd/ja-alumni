@@ -12,11 +12,8 @@
   --color-surface: #F8F9FC;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* box-sizing is handled by Tailwind v4 Preflight (included via @import "tailwindcss") */
+/* Explicit reset removed to avoid conflicts — Preflight already zeros margins/padding */
 
 html {
   scroll-behavior: smooth;
@@ -35,7 +32,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.15;   /* was 1.1 — a hair looser prevents multi-line clipping */
+}
+
+p {
+  line-height: 1.7;    /* default breathing room for all <p> without an explicit class */
 }
 
 /* ────────── Custom Animations ────────── */
@@ -58,6 +59,15 @@ h1, h2, h3, h4, h5, h6 {
   animation: fadeInUp 0.7s ease forwards;
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
 .animate-fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
@@ -70,8 +80,28 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ────────── Utility ────────── */
 .section-padding {
-  padding-top: 6rem;
+  padding-top: 6rem;    /* 96px  — home page sections */
   padding-bottom: 6rem;
+}
+
+/* Inner pages (Campus, Quienes Somos) — extra tall */
+.section-padding-xl {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding-xl {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding-xl {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
 }
 
 .container-max {
@@ -82,19 +112,20 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 1.5rem;
 }
 
+/* pt-hero: espacio para compensar la navbar fija (~80px) + aire visual */
 .pt-hero {
-  padding-top: 14rem;
+  padding-top: 7rem; /* ~112px en móvil */
 }
 
 @media (min-width: 768px) {
   .pt-hero {
-    padding-top: 18rem;
+    padding-top: 8rem; /* ~128px en tablet */
   }
 }
 
 @media (min-width: 1024px) {
   .pt-hero {
-    padding-top: 22rem;
+    padding-top: 9rem; /* ~144px en desktop */
   }
 }
 
