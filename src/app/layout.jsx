@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -10,7 +9,7 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Red Alumni | Junior Achievement El Salvador",
   description:
     "Formas parte de una red de más de 1 millón de personas que están construyendo el país. Reconéctate con la comunidad Alumni de JA El Salvador.",
@@ -21,11 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html lang="es" className={inter.variable}>
       <body>

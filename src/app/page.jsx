@@ -132,7 +132,7 @@ const segmentOptions = [
 
 /* ───── Page ───── */
 export default function Home() {
-  const [activeStory, setActiveStory] = useState<(typeof stories)[0] | null>(null);
+  const [activeStory, setActiveStory] = useState(null);
 
   return (
     <main>
@@ -193,7 +193,7 @@ export default function Home() {
           <h1
             className="animate-fade-in-up delay-100"
             style={{
-              fontSize: "clamp(2.8rem, 7vw, 5.5rem)",
+              fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
               fontWeight: 900,
               color: "#ffffff",
               lineHeight: 1.05,
@@ -208,7 +208,7 @@ export default function Home() {
           <p
             className="animate-fade-in-up delay-200"
             style={{
-              fontSize: "clamp(1.05rem, 2.5vw, 1.3rem)",
+              fontSize: "clamp(1rem, 2vw, 1.2rem)",
               color: "rgba(255,255,255,0.8)",
               lineHeight: 1.65,
               maxWidth: 660,
@@ -669,6 +669,7 @@ export default function Home() {
               letterSpacing: "-0.03em",
               maxWidth: 700,
               margin: "0 auto 1.5rem",
+              cursor: "default"
             }}
           >
             Tu red ya existe.{" "}

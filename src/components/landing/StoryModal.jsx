@@ -1,27 +1,9 @@
 "use client";
 import { X, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import React from "react";
 
-interface Story {
-  id: number;
-  name: string;
-  role: string;
-  company: string;
-  gen: string;
-  preview: string;
-  full: string;
-  icon: any;
-  color: string;
-  accent: string;
-}
-
-export default function StoryModal({
-  story,
-  onClose,
-}: {
-  story: Story;
-  onClose: () => void;
-}) {
+export default function StoryModal({ story, onClose }) {
   return (
     <div className="modal-overlay" onClick={onClose} id={`story-modal-${story.id}`}>
       <div
