@@ -5,7 +5,7 @@ import { ArrowLeft, MapPin, Globe, Users } from "lucide-react";
 
 export default function ConsejoRegionalPage() {
   return (
-    <main className="min-h-screen bg-gray-50 pt-64 md:pt-96 pb-20">
+    <main className="min-h-screen bg-gray-50 pt-hero pb-20">
       <div className="container-max px-4">
         <Link href="/quienes-somos" className="inline-flex items-center gap-2 text-ja-blue font-bold mb-12 hover:underline">
           <ArrowLeft size={20} /> Volver a Quiénes Somos

@@ -82,6 +82,22 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 1.5rem;
 }
 
+.pt-hero {
+  padding-top: 14rem;
+}
+
+@media (min-width: 768px) {
+  .pt-hero {
+    padding-top: 18rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pt-hero {
+    padding-top: 22rem;
+  }
+}
+
 /* ────────── Buttons ────────── */
 .btn-primary {
   display: inline-flex;
